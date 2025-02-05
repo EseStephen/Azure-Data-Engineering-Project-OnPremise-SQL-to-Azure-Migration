@@ -1,0 +1,9 @@
+{
+	"name": "mgrtadf",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b730fa86-9742-42bf-8285-63c734019bdf",
+		"tenantId": "37bdeb5b-ad93-4223-9607-551f895a2242"
+	}
+}
