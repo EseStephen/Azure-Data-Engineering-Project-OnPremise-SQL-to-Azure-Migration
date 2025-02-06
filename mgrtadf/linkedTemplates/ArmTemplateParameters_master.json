@@ -11,6 +11,9 @@
 		"AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://mgrdatalake.dfs.core.windows.net/"
 		},
+		"AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"value": "0206-081021-b3jqw1d2"
+		},
 		"AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://mgrpasskeys.vault.azure.net/"
 		},
