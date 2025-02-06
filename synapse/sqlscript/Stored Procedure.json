@@ -2,7 +2,7 @@
 	"name": "Stored Procedure",
 	"properties": {
 		"content": {
-			"query": "USE gold_db\nGO\n\nCREATE OR ALTER PROC CreateServerlessView_Gold @ViewName NVARCHAR(100)\nAS\nBEGIN\n    DECLARE @statement NVARCHAR(MAX)\n    \n    SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + N' AS\n    SELECT * FROM\n    OPENROWSET(\n        BULK ''https://mgrdatalake.dfs.core.windows.net/gold/SalesLT/' + @ViewName + ''',\n        FORMAT = ''DELTA''\n    ) AS result;'\n\n    EXEC sp_executesql @statement\nEND\nGO\n",
+			"query": "USE gold_db\nGO\n\nCREATE OR ALTER PROC CreateServerlessView_Gold @ViewName NVARCHAR(100)\nAS\nBEGIN\n\nDECLARE @statement NVARCHAR(MAX)\n    \n    SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + N' AS\n    SELECT * FROM\n    OPENROWSET(\n        BULK ''https://mgrdatalake.dfs.core.windows.net/gold/SalesLT/' + @ViewName + '/'',\n        FORMAT = ''DELTA''\n    ) AS result;'\n\nEXEC (@statement)\n\n\nEND\nGO\n",
 			"metadata": {
 				"language": "sql"
 			},
